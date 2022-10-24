@@ -1,0 +1,44 @@
+# Data
+data_path: './data/pendigit'
+digit: 0
+sig_dim: 2
+sig_level: 5
+conditional_dim: 1
+
+# Model
+model_type: "logsig"
+algo: "trivialization"
+dataset: "pendigit"
+gpu_id: 0
+device: cuda
+
+# Generator
+generator: "pendigit"
+G_input_dim: 1024
+G_hidden_dim: 128
+
+
+# Generator_Trainer
+G_train_batch_size: 64
+G_train_lr: 0.001
+G_train_lr_gamma: 0.5
+G_train_lr_step_size: 10000
+G_train_num_steps: 100000
+G_save_model: False
+G_save_every: 10000
+G_results_folder: "./result/pendigit"
+G_seed: 3407
+G_var_coeff: 1.
+G_cov_coeff: 0.1
+
+# Reconstructor Trainer
+reconstructor: "pendigit"
+R_train_batch_size: 64
+R_train_lr: 0.01
+R_train_lr_gamma: 0.95
+R_train_lr_step_size: 1000
+R_train_num_steps: 10000
+R_save_model: False
+R_save_every: 10000
+R_results_folder: "./result/pendigit"
+R_L1_coeff: 0.001
